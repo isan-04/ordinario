@@ -5,10 +5,12 @@
 #include "bajas.h"
 #include "buscar.h"
 #include "mostrar.h"
+#include "especiales.h"
 
 
 int main(){
     int op,opA,opB,opM;
+    int opE, opMod, opDatos, opCalif, opCalificaciones, opCarrera, opSemestre, opMateria, opParcial;
     char respA,respB;
     struct Persona *ptr = NULL;
 
@@ -26,7 +28,7 @@ int main(){
                         case 2:
                             do{
                                 Altas(&ptr);
-                                printf("Desea Seguir Registrando Alumnos? (S/N): ");
+                                printf("DESEA SEGUIR REGISTRANDO ALUMNOS? (S/N): ");
                                 scanf(" %c", &respA);
                             }while(respA != 'N' && respA != 'n');
                             break;
@@ -112,6 +114,95 @@ int main(){
                 break;
 
             case 4:
+                do{
+                    opE = menuEspeciales();
+
+                    switch(opE){
+                        case 1:
+                            do{
+                                opMod = menuModificar();
+
+                                switch(opMod){
+
+                                    case 1:
+                                        do{
+                                            opCalif = menuModificarCalif();
+                                            switch(opCalif){
+
+                                                case 1:
+                                                    // modificarParcial(ptr);
+                                                    break;
+
+                                                case 2:
+                                                    // modificarMateria(ptr);
+                                                    break;
+
+                                                case 0:
+                                                    printf("SALIENDO...\n");
+                                                    break;
+
+                                                default:
+                                                    printf("OPCION INVALIDA\n");
+                                                    break;
+                                            }
+
+                                        }while(opCalif != 0);
+
+                                        break;
+
+                                    case 2:
+                                        do{
+                                            opDatos = menuModificarDatos();
+                                            switch(opDatos){
+
+                                                case 1:
+                                                    // modificarPersona(ptr);
+                                                    break;
+
+                                                case 2:
+                                                    // modificarDatosAlumno(ptr);
+                                                    break;
+
+                                                case 0:
+                                                    printf("SALIENDO...\n");
+                                                    break;
+
+                                                default:
+                                                    printf("OPCION INVALIDA\n");
+                                                    break;
+                                            }
+                                        }while(opDatos != 0);
+
+                                    break;
+
+                                    case 0:
+                                        printf("SALIENDO...\n");
+                                        break;
+
+                                    default:
+                                        printf("OPCION INVALIDA\n");
+                                        break;
+                                }
+
+                            }while(opMod != 0);
+
+                            break;
+
+                        case 2:
+                            // Aquí irá el menú de Calificaciones
+                            break;
+
+                        case 0:
+                            printf("SALIENDO...\n");
+                            break;
+
+                        default:
+                            printf("OPCION INVALIDA\n");
+                            break;
+                    }
+
+                }while(opE != 0);
+
                 break;
 
             case 0:
@@ -119,9 +210,10 @@ int main(){
                 break;
 
             default:
+                printf("OPCION INVALIDA\n");
                 break;
         
-            }
-        }while(op!=0);
+        }
+    }while(op!=0);
 
 }

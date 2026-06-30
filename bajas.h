@@ -71,7 +71,7 @@ void eliminarMatricula(struct Persona **ptr){
             printf("ALUMNO ELIMINADO\n");
         }
 
-        printf("¿DESEA ELIMINAR OTRO ALUMNO? (S/N): ");
+        printf("DESEA SEGUIR ELIMINANDO ALUMNOS? (S/N): ");
         scanf(" %c", &resp);
         limpiarBuffer();
 

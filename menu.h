@@ -60,7 +60,7 @@ int menuEspeciales(void){
     int opc;
     printf("\n ---MENU ESPECIALES---\n");
     printf("1.- Modificar\n");
-    printf("2.- Mostrar calificaciones\n");
+    printf("2.- Calificaciones\n");
     printf("0.- Salir.\n");
     scanf("%d",&opc);
     limpiarBuffer();
@@ -71,7 +71,7 @@ int menuModificar(void){
     int opc;
     printf("\n ---MENU MODIFICAR---\n");
     printf("1.- Calificaciones de Alumno\n");
-    printf("2.- Datos de Alumno\n");
+    printf("2.- Datos\n");
     printf("0.- Salir.\n");
     scanf("%d",&opc);
     limpiarBuffer();
@@ -101,7 +101,7 @@ int menuModificarDatos(void){
 }
 
 
-int menuMostrarCalificaciones(void){
+int menuCalificaciones(void){
     int opc;
     printf("\n ---MENU MOSTRAR CALIFICACIONES---\n");
     printf("1.- Semestre\n");
@@ -112,12 +112,45 @@ int menuMostrarCalificaciones(void){
     return opc;
 }
 
-int menuMostrarCalificacionesSemestre(void){
+int menuCalifCarrera(void){
     int opc;
-    printf("\n ---MENU SEMESTRE---\n");
+    printf("\n ---MENU CARRERA---\n");
+    printf("1.- Alumnos sin adeudos\n");
+    printf("2.- Alumnos con maximo 3 adeudos\n");
+    printf("3.- Alumnos con mas de 4 adeudos\n");
+    printf("0.- Salir\n");
+    scanf("%d",&opc);
+    limpiarBuffer();
+    return opc;
+}
+
+int menuCalifSemestre(void){
+    int opc;
+    printf("\n---MENU SEMESTRE---\n");
     printf("1.- Materia\n");
     printf("2.- Parcial\n");
-    printf("0.- Salir.\n");
+    printf("0.- Salir\n");
+    scanf("%d",&opc);
+    limpiarBuffer();
+    return opc;
+}
+
+int menuMateria(void){
+    int opc;
+    printf("\n---MENU MATERIA---\n");
+    printf("1.- Matricula de alumnos aprobados y reprobados\n");
+    printf("2.- Mostrar alumnos que aprobaron el parcial seleccionado\n");
+    printf("0.- Salir\n");
+    scanf("%d",&opc);
+    limpiarBuffer();
+    return opc;
+}
+
+int menuParcial(void){
+    int opc;
+    printf("\n---MENU PARCIAL---\n");
+    printf("1.- Mostrar matricula y nombre de alumnos con materias aprobadas\n");
+    printf("0.- Salir\n");
     scanf("%d",&opc);
     limpiarBuffer();
     return opc;
