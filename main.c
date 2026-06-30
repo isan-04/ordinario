@@ -134,7 +134,7 @@ int main(){
                                                     break;
 
                                                 case 2:
-                                                    // modificarMateria(ptr);
+                                                    modificarMateria(ptr);
                                                     break;
 
                                                 case 0:

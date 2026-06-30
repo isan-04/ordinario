@@ -5,6 +5,45 @@
 #include <string.h>
 #include "datos.h"
 #include "buscar.h"
+#include "generadores.h"
+
+void modificarMateria(struct Persona *ptr);
+void modificarPersona(struct Persona *ptr);
+void modificarAlumno(struct Persona *ptr);
+
+void modificarMateria(struct Persona *ptr){
+    struct Persona *aux;
+    int materia;
+
+    aux = buscarMatricula(ptr);
+
+    if(aux == NULL){
+        printf("ALUMNO NO ENCONTRADO\n");
+        return;
+    }else{
+        printf("ALUMNO ENCONTRADO\n");
+    }
+
+    printf("MATERIA (1-5): ");
+    scanf("%d",&materia);
+
+    if(materia < 1 || materia > 5){
+        printf("MATERIA INVALIDA\n");
+        return;
+    }
+
+    for(int i=0;i<3;i++){
+        printf("Parcial %d: ", i+1);
+        scanf("%f",&aux->ptrAlum->calif[materia-1][i]);
+    }
+
+    printf("Ordinario: ");
+    scanf("%f",&aux->ptrAlum->calif[materia-1][3]);
+
+    generarPromedio(aux->ptrAlum);
+
+    printf("CALIFICACIONES MODIFICADAS\n");
+}
 
 void modificarPersona(struct Persona *ptr){
     struct Persona *aux;
@@ -14,6 +53,8 @@ void modificarPersona(struct Persona *ptr){
     if(aux == NULL){
         printf("ALUMNO NO ENCONTRADO\n");
         return;
+    }else{
+        printf("ALUMNO ENCONTRADO\n");
     }
 
     printf("\nNUEVO NOMBRE: ");
@@ -42,6 +83,8 @@ void modificarAlumno(struct Persona *ptr){
     if(aux == NULL){
         printf("ALUMNO NO ENCONTRADO\n");
         return;
+    }else{
+        printf("ALUMNO ENCONTRADO\n");
     }
 
     printf("NUEVA MATRICULA: ");

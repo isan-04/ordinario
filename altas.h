@@ -59,24 +59,18 @@ struct Alumno *nuevoAlumno(void){
         scanf("%d", &ptrTempA->semestre);
 
         for(int i = 0; i < 5; i++){
-
             printf("\nMateria %d\n", i + 1);
 
-            printf("Parcial 1: ");
-            scanf("%f", &ptrTempA->calif[i][0]);
-
-            printf("Parcial 2: ");
-            scanf("%f", &ptrTempA->calif[i][1]);
-
-            printf("Parcial 3: ");
-            scanf("%f", &ptrTempA->calif[i][2]);
+            for(int j=0;j<3;j++){
+                 printf("Parcial %d: ",j+1);
+                scanf("%f", &ptrTempA->calif[i][j]);
+            }
 
             printf("Ordinario: ");
             scanf("%f", &ptrTempA->calif[i][3]);
         }
 
         generarPromedio(ptrTempA);
-
         generarCorreo(ptrTempA);
 
         return ptrTempA;
