@@ -130,7 +130,7 @@ int main(){
                                             switch(opCalif){
 
                                                 case 1:
-                                                    // modificarParcial(ptr);
+                                                    modificarParcial(ptr);
                                                     break;
 
                                                 case 2:

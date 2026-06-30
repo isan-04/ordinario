@@ -7,9 +7,52 @@
 #include "buscar.h"
 #include "generadores.h"
 
+void modificarParcial(struct Persona *ptr);
 void modificarMateria(struct Persona *ptr);
 void modificarPersona(struct Persona *ptr);
 void modificarAlumno(struct Persona *ptr);
+
+void modificarParcial(struct Persona *ptr){
+    struct Persona *aux;
+    int parcial;
+
+    aux = buscarMatricula(ptr);
+
+    if(aux == NULL){
+        printf("ALUMNO NO ENCONTRADO\n");
+        return;
+    }else{
+        printf("ALUMNO ENCONTRADO\n");
+    }
+
+    printf("\nPARCIAL A MODIFICAR\n");
+    printf("1.- Parcial 1\n");
+    printf("2.- Parcial 2\n");
+    printf("3.- Parcial 3\n");
+    printf("4.- Ordinario\n");
+    printf("OPCION: ");
+    scanf("%d", &parcial);
+
+    if(parcial < 1 || parcial > 4){
+        printf("PARCIAL INVALIDO\n");
+        return;
+    }
+
+    for(int i = 0; i < 5; i++){
+        printf("\nMATERIA %d\n", i + 1);
+        if(parcial == 4){
+            printf("ORDINARIO: ");
+        }else{
+            printf("PARCIAL %d: ", parcial);
+        }
+
+        scanf("%f", &aux->ptrAlum->calif[i][parcial - 1]);
+    }
+
+    generarPromedio(aux->ptrAlum);
+
+    printf("CALIFICACIONES MODIFICADAS\n");
+}
 
 void modificarMateria(struct Persona *ptr){
     struct Persona *aux;
@@ -100,7 +143,6 @@ void modificarAlumno(struct Persona *ptr){
         scanf("%d", & aux->ptrAlum->semestre);
 
         generarCorreo(aux->ptrAlum);
-
     printf("DATOS MODIFICADOS\n");
 }
 
