@@ -24,7 +24,6 @@ char *generarEspacio(){
 
     }while(c!='\n' && c!=EOF);
 
-
     cadena = realloc(cadena,(tam+1)*sizeof(char));
     cadena[tam]='\0';
 
@@ -52,7 +51,7 @@ void generarCorreo(struct Alumno *ptrTempA){
 
 void limpiarBuffer(){
     int c;
-
+    
     while((c = getchar()) != '\n' && c != EOF);
 
 }

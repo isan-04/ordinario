@@ -9,7 +9,7 @@ struct Alumno *nuevoAlumno(void);
 void Altas(struct Persona **);
 
 struct Persona *nuevaPersona(void){
-   struct Persona *ptrTemp=NULL;
+    struct Persona *ptrTemp=NULL;
     ptrTemp = (struct Persona *) malloc(sizeof(struct Persona));
 
     if(ptrTemp==NULL){

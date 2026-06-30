@@ -25,36 +25,21 @@ void mostrarTodos(struct Persona *ptr){
 
             if(ptrAux->ptrAlum != NULL){
 
-                printf("MATRICULA: %s\n",
-                ptrAux->ptrAlum->matricula);
+                printf("MATRICULA: %s\n",ptrAux->ptrAlum->matricula);
 
-                printf("CARRERA: %s\n",
-                ptrAux->ptrAlum->carrera);
+                printf("CARRERA: %s\n",ptrAux->ptrAlum->carrera);
 
-                printf("SEMESTRE: %d\n",
-                ptrAux->ptrAlum->semestre);
+                printf("SEMESTRE: %d\n",ptrAux->ptrAlum->semestre);
 
-                printf("CORREO: %s\n",
-                ptrAux->ptrAlum->correo);
+                printf("CORREO: %s\n",ptrAux->ptrAlum->correo);
 
                 for(int i=0;i<5;i++){
-
                     printf("\nMATERIA %d\n",i+1);
-
-                    printf("Parcial 1: %.1f\n",
-                    ptrAux->ptrAlum->calif[i][0]);
-
-                    printf("Parcial 2: %.1f\n",
-                    ptrAux->ptrAlum->calif[i][1]);
-
-                    printf("Parcial 3: %.1f\n",
-                    ptrAux->ptrAlum->calif[i][2]);
-
-                    printf("Ordinario: %.1f\n",
-                    ptrAux->ptrAlum->calif[i][3]);
-
-                    printf("Promedio: %.1f\n",
-                    ptrAux->ptrAlum->calif[i][4]);
+                    printf("Parcial 1: %.1f\n",ptrAux->ptrAlum->calif[i][0]);
+                    printf("Parcial 2: %.1f\n",ptrAux->ptrAlum->calif[i][1]);
+                    printf("Parcial 3: %.1f\n",ptrAux->ptrAlum->calif[i][2]);
+                    printf("Ordinario: %.1f\n",ptrAux->ptrAlum->calif[i][3]);
+                    printf("Promedio: %.1f\n",ptrAux->ptrAlum->calif[i][4]);
                 }
             }
             ptrAux = ptrAux->ptrSig;

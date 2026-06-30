@@ -56,7 +56,6 @@ void eliminarMatricula(struct Persona **ptr){
         }else{
 
             if(ptrAnt == NULL){
-
                 *ptr = ptrAux->ptrSig;
 
             }else{

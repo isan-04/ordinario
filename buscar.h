@@ -107,11 +107,10 @@ void buscarCarreraSemestre(struct Persona *ptr){
     scanf("%d", &semestre);
 
     while(ptr != NULL){
-        if(strcmp(ptr->ptrAlum->carrera, carrera) == 0 &&
-           ptr->ptrAlum->semestre == semestre){
-
+        if(strcmp(ptr->ptrAlum->carrera, carrera) == 0 && ptr->ptrAlum->semestre == semestre){
             mostrarAlumno(ptr);
             i++;
+            
         }
         ptr = ptr->ptrSig;
     }

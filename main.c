@@ -156,11 +156,11 @@ int main(){
                                             switch(opDatos){
 
                                                 case 1:
-                                                    // modificarPersona(ptr);
+                                                    modificarPersona(ptr);
                                                     break;
 
                                                 case 2:
-                                                    // modificarDatosAlumno(ptr);
+                                                    modificarAlumno(ptr);
                                                     break;
 
                                                 case 0:
